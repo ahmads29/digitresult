@@ -1,0 +1,426 @@
+<head>
+    <style>
+
+        .faq-container {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+            max-width: 896px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .faq-item {
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 16px 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            transition: background-color 0.2s ease;
+            border-radius: 50px;
+            background-color: white;
+            z-index: 990;
+        }
+
+        .faq-question:hover {
+            background-color: #f9fafb;
+        }
+
+        .question-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            /*flex: 1;*/
+        }
+
+        .question-icon {
+            width: 32px;
+            height: 32px;
+            background-color: #14b8a6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .icon-dot {
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .question-text {
+            color: #1f2937;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .chevron-icon {
+            color: #14b8a6;
+            flex-shrink: 0;
+            margin-left: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.open .chevron-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            border-radius: 0px 0px 50px 50px;
+            margin: 0 8px 8px 8px;
+            background-color: #f9fafb;
+            text-align: center;
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+        }
+        .faq-item.open .faq-item {
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+        .answer-content {
+            padding: 16px 24px;
+            margin-left: 40px;
+            color: #6b7280;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .question-text {
+            font-size: 14px;
+        }
+            .answer-content {
+            padding: 16px 24px;
+            margin-left: 40px;
+            color: #6b7280;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+            body {
+                padding: 16px;
+            }
+            
+            .question-text {
+                font-size: 16px;
+            }
+            
+            .answer-content {
+                font-size: 14px;
+                margin-left: 32px;
+            }
+            
+            .faq-question {
+                padding: 12px 16px;
+            }
+            
+            .answer-content {
+                padding: 12px 16px;
+            }
+        }
+        @media(max-width:450px){
+    .question-text{
+        max-width: 80% !important;
+        font-size: 14px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
+        width: 100%;
+    }
+    .question-content {
+        width: 100%;
+    }
+    .faq-question {
+        padding: 12px;
+    }
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <div class="faq-item" data-index="0">
+            <button class="faq-question">
+                <div class="question-content">
+                    <div class="question-icon">
+                        <img src="http://as.digitresults.com/wp-content/uploads/2025/06/Group-1261157454.png" alt="">
+                    </div>
+                    <h3 class="question-text">Need to Cancel or Reschedule?</h3>
+                </div>
+                <div class="chevron-icon">
+                    
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    No problem. If you need to cancel or move your appointment, just give us a call or use our online scheduling tool. We appreciate at least 24 hours' notice to help us accommodate others in need.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" data-index="1">
+            <button class="faq-question">
+                <div class="question-content">
+                    <div class="question-icon">
+                        <img src="http://as.digitresults.com/wp-content/uploads/2025/06/Group-1261157454.png" alt="">
+                    </div>
+                    <h3 class="question-text">Will Emergencies Delay My Appointment?</h3>
+                </div>
+                <div class="chevron-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    While we strive to keep appointments on time, medical emergencies occasionally require immediate attention. If a delay occurs, our staff will contact you promptly to reschedule or adjust your appointment time.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" data-index="2">
+            <button class="faq-question">
+                <div class="question-content">
+                    <div class="question-icon">
+                        <img src="http://as.digitresults.com/wp-content/uploads/2025/06/Group-1261157454.png" alt="">
+                    </div>
+                    <h3 class="question-text">Will I Need Someone to Drive Me Home?</h3>
+                </div>
+                <div class="chevron-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    For most examinations, you can drive yourself home. However, if you receive sedation or certain medications during your procedure, you will need someone to drive you home for your safety.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" data-index="3">
+            <button class="faq-question">
+                <div class="question-content">
+                    <div class="question-icon">
+                        <img src="http://as.digitresults.com/wp-content/uploads/2025/06/Group-1261157454.png" alt="">
+                    </div>
+                    <h3 class="question-text">How Can I Estimate My Costs?</h3>
+                </div>
+                <div class="chevron-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    Contact our billing department with your insurance information and procedure details. We'll provide a cost estimate based on your coverage and help you understand any out-of-pocket expenses.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" data-index="4">
+            <button class="faq-question">
+                <div class="question-content">
+                    <div class="question-icon">
+                        <img src="http://as.digitresults.com/wp-content/uploads/2025/06/Group-1261157454.png" alt="">
+                    </div>
+                    <h3 class="question-text">Is the Estimate a Guarantee?</h3>
+                </div>
+                <div class="chevron-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    Cost estimates are based on typical procedures and current insurance benefits. Final costs may vary depending on additional services needed or changes in your insurance coverage.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" data-index="5">
+            <button class="faq-question">
+                <div class="question-content">
+                    <div class="question-icon">
+                        <img src="http://as.digitresults.com/wp-content/uploads/2025/06/Group-1261157454.png" alt="">
+                    </div>
+                    <h3 class="question-text">How Do Our Prices Compare to Hospitals?</h3>
+                </div>
+                <div class="chevron-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    Our outpatient facility typically offers the same high-quality procedures at significantly lower costs than hospitals, often saving patients 40-60% on their medical expenses.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" data-index="6">
+            <button class="faq-question">
+                <div class="question-content">
+                    <div class="question-icon">
+                        <img src="http://as.digitresults.com/wp-content/uploads/2025/06/Group-1261157454.png" alt="">
+                    </div>
+                    <h3 class="question-text">What If My Insurance Doesn't Cover the Exam?</h3>
+                </div>
+                <div class="chevron-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    We offer competitive self-pay rates and flexible payment plans. Our financial counselors can help you explore options to make your care affordable, even without insurance coverage.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" data-index="7">
+            <button class="faq-question">
+                <div class="question-content">
+                    <div class="question-icon">
+                        <img src="http://as.digitresults.com/wp-content/uploads/2025/06/Group-1261157454.png" alt="">
+                    </div>
+                    <h3 class="question-text">Will My Insurer Approve a Procedure Outside of a Hospital?</h3>
+                </div>
+                <div class="chevron-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    Most insurance plans prefer outpatient facilities due to lower costs. We'll verify your benefits and obtain necessary pre-authorizations to ensure your procedure is covered.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" data-index="8">
+            <button class="faq-question">
+                <div class="question-content">
+                    <div class="question-icon">
+                        <img src="http://as.digitresults.com/wp-content/uploads/2025/06/Group-1261157454.png" alt="">
+                    </div>
+                    <h3 class="question-text">When Will My Exam Results Be Ready?</h3>
+                </div>
+                <div class="chevron-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    Most results are available within 24-48 hours. Complex studies may take 3-5 business days. We'll contact you with results and send copies to your referring physician promptly.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" data-index="9">
+            <button class="faq-question">
+                <div class="question-content">
+                    <div class="question-icon">
+                        <img src="http://as.digitresults.com/wp-content/uploads/2025/06/Group-1261157454.png" alt="">
+                    </div>
+                    <h3 class="question-text">Can I Request a Copy of My Images?</h3>
+                </div>
+                <div class="chevron-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    Absolutely! You can request copies of your images on CD or through our secure patient portal. There may be a small processing fee for physical copies.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" data-index="10">
+            <button class="faq-question">
+                <div class="question-content">
+                    <div class="question-icon">
+                        <img src="http://as.digitresults.com/wp-content/uploads/2025/06/Group-1261157454.png" alt="">
+                    </div>
+                    <h3 class="question-text">How Long Are My Records Stored?</h3>
+                </div>
+                <div class="chevron-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    We maintain medical records according to state and federal regulations, typically for 7-10 years. Images and reports are stored digitally for easy access during this period.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            const firstItem = document.querySelector('.faq-item[data-index="0"]');
+            if (firstItem) {
+                firstItem.classList.add('open');
+            }
+            
+            faqItems.forEach(item => {
+                const button = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const answerContent = answer.querySelector('.answer-content');
+                
+                button.addEventListener('click', function() {
+                    const isOpen = item.classList.contains('open');
+                    
+                    if (isOpen) {
+                        item.classList.remove('open');
+                        answer.style.maxHeight = '0px';
+                    } else {
+                        item.classList.add('open');
+                        answer.style.maxHeight = answerContent.scrollHeight + 'px';
+                    }
+                });
+                
+                if (item.classList.contains('open')) {
+                    answer.style.maxHeight = answerContent.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+</body>
